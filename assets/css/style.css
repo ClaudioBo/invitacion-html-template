@@ -49,12 +49,8 @@
     max-width: 700px
 }
 
-.fallinlove {
+.cursiva {
     font-family: "Fall In Love", sans-serif;
-}
-
-.galyon {
-    font-family: "Galyon-Book", sans-serif;
 }
 
 .galyon-bold {
@@ -63,13 +59,18 @@
 
 .texto-poema {
     font-family: "Galyon-Bold", sans-serif;
-    font-size: larger;
-    color    : var(--poem-color);
+    font-size  : larger;
+    color      : var(--poem-color);
 }
 
 .texto-numero-restante {
     font-family: "Galyon-Bold", sans-serif;
-    font-size: 4em;
+    font-size  : 4em;
+    color      : var(--poem-color);
+}
+
+.azul-color {
+    color      : var(--poem-color);
 }
 
 .restante-main {
