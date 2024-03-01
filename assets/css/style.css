@@ -1,7 +1,23 @@
 /* text stuff */
 
 * {
-    font-family: "Poppins", sans-serif;
+    font-family: "Galyon-Book", sans-serif;
+}
+
+
+@font-face {
+    font-family: Fall In Love;
+    src        : url(/assets/fonts/fall-in-love.ttf);
+}
+
+@font-face {
+    font-family: Galyon-Book;
+    src        : url(/assets/fonts/Galyon-Book.otf);
+}
+
+@font-face {
+    font-family: Galyon-Bold;
+    src        : url(/assets/fonts/Galyon-Bold.otf);
 }
 
 .shadow-text {
@@ -18,7 +34,7 @@
 
 .logo {
     padding-bottom: 1em;
-    max-width     : 50%;
+    max-width     : 70%;
 }
 
 .fpf-container {
@@ -29,100 +45,145 @@
     max-width: 800px;
 }
 
+.contenido-anchito {
+    max-width: 700px
+}
+
+.fallinlove {
+    font-family: "Fall In Love", sans-serif;
+}
+
+.galyon {
+    font-family: "Galyon-Book", sans-serif;
+}
+
+.galyon-bold {
+    font-family: "Galyon-Bold", sans-serif;
+}
+
+.texto-poema {
+    font-family: "Galyon-Bold", sans-serif;
+    font-size: larger;
+    color    : var(--poem-color);
+}
+
+.texto-numero-restante {
+    font-family: "Galyon-Bold", sans-serif;
+    font-size: 4em;
+}
+
+.restante-main {
+    display: inline-block;
+}
+
 .content {
-    padding      : 1em;
-    border-radius: 1em;
-    margin-left  : auto;
-    margin-right : auto;
+    padding     : 1em;
+    margin-left : auto;
+    margin-right: auto;
 }
 
 .glassmorphism {
     background             : rgba(255, 255, 255, 0);
-    border-radius          : 32px;
     box-shadow             : 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter        : blur(10.8px);
     -webkit-backdrop-filter: blur(10.8px);
 }
 
 .seccion {
-    background: rgba(0, 0, 0, 0.25);
-    color     : white;
+    background: rgb(255, 255, 255);
 }
 
 .content .seccion p {
     margin: 0px;
 }
 
+.fill-screen {
+    height: 100svh;
+}
+
+.restante-separador {
+    padding-left : 0.5em;
+    padding-right: 0.5em;
+
+}
+
 /* bruh */
 
 :root {
-    --color-bg1  : rgb(101, 132, 224);
+    --color-bg1  : rgb(66, 108, 236);
     --color-bg2  : rgb(167, 201, 234);
-    --color1     : 156, 186, 229;
-    --color2     : 103, 134, 225;
-    --color3     : 131, 162, 252;
-    --color4     : 103, 134, 225;
-    --color5     : 171, 205, 232;
-    --circle-size: 80%;
+    --color1     : 157, 187, 221;
+    --color2     : 171, 205, 232;
+    --poem-color : #111565;
+    --circle-size: 200%;
     --blending   : hard-light;
 }
 
-@keyframes moveInCircle {
+svg {
+    display: none;
+}
+
+@keyframes moveLeftRightUpperBlob {
     0% {
-        transform: rotate(0deg);
+        transform: translateX(-20vw) translateY(-20vh);
     }
 
     50% {
-        transform: rotate(180deg);
+        transform: translateX(80vw) translateY(-20vh);
     }
 
     100% {
-        transform: rotate(360deg);
+        transform: translateX(-20vw) translateY(-20vh);
     }
 }
 
-@keyframes moveVertical {
+@keyframes moveLeftRightLowerBlob {
     0% {
-        transform: translateY(-50%);
+        transform: translateX(80vw) translateY(50vh);
     }
 
     50% {
-        transform: translateY(50%);
+        transform: translateX(-20vw) translateY(50vh);
     }
 
     100% {
-        transform: translateY(-50%);
+        transform: translateX(80vw) translateY(50vh);
     }
 }
 
-@keyframes moveHorizontal {
-    0% {
-        transform: translateX(-50%) translateY(-10%);
-    }
-
-    50% {
-        transform: translateX(50%) translateY(10%);
-    }
-
-    100% {
-        transform: translateX(-50%) translateY(-10%);
+@media (min-width: 0px) {
+    .texto-numero-restante {
+        font-size: 2em;
     }
 }
 
+@media (min-width: 576px) {
+    .texto-numero-restante {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 768px) {
+    .texto-numero-restante {
+        font-size: 4em;
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
 
 .gradient-bg {
-    width        : 100vw;
-    height       : 100vh;
-    position     : fixed;
-    display      : block;
-    overflow     : hidden;
+    width     : 100vw;
+    height    : 100vh;
+    position  : fixed;
+    display   : block;
+    overflow  : hidden;
     background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
-    top          : 0;
-    left         : 0;
-
-    svg {
-        display: none;
-    }
+    top       : 0;
+    left      : 0;
 
     .gradients-container {
         filter: url(#goo) blur(40px);
@@ -134,84 +195,25 @@
         position      : absolute;
         mix-blend-mode: var(--blending);
 
-        background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, transparent 50%) no-repeat;
+        background: radial-gradient(circle at center, rgba(var(--color1), 1) 0, transparent 80%);
 
-        width : var(--circle-size);
-        height: var(--circle-size);
-        top   : calc(50% - var(--circle-size) / 2);
-        left  : calc(50% - var(--circle-size) / 2);
+        width : calc(var(--circle-size));
+        height: calc(var(--circle-size));
 
-        transform-origin: center center;
-        animation       : moveVertical 30s ease infinite;
-
-        opacity: 1;
+        animation: moveLeftRightUpperBlob 28s ease infinite;
     }
 
     .g2 {
         position      : absolute;
         mix-blend-mode: var(--blending);
 
-        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, transparent 50%) no-repeat;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, transparent 80%);
 
         width : var(--circle-size);
         height: var(--circle-size);
-        top   : calc(50% - var(--circle-size) / 2);
-        left  : calc(50% - var(--circle-size) / 2);
 
-        transform-origin: calc(50% - 400px);
-        animation       : moveInCircle 20s reverse infinite;
-
-        opacity: 1;
+        animation       : moveLeftRightLowerBlob 20s ease infinite;
+        transform-origin: bottom right;
     }
 
-    .g3 {
-        position      : absolute;
-        mix-blend-mode: var(--blending);
-
-        background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, transparent 50%) no-repeat;
-
-        width : var(--circle-size);
-        height: var(--circle-size);
-        top   : calc(50% - var(--circle-size) / 2 + 200px);
-        left  : calc(50% - var(--circle-size) / 2 - 500px);
-
-        transform-origin: calc(50% + 400px);
-        animation       : moveInCircle 40s linear infinite;
-
-        opacity: 1;
-    }
-
-    .g4 {
-        position      : absolute;
-        mix-blend-mode: var(--blending);
-
-        background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, transparent 50%) no-repeat;
-
-        width : var(--circle-size);
-        height: var(--circle-size);
-        top   : calc(50% - var(--circle-size) / 2);
-        left  : calc(50% - var(--circle-size) / 2);
-
-        transform-origin: calc(50% - 200px);
-        animation       : moveHorizontal 40s ease infinite;
-
-        opacity: 0.7;
-    }
-
-    .g5 {
-        position      : absolute;
-        mix-blend-mode: var(--blending);
-
-        background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, transparent 50%) no-repeat;
-
-        width : calc(var(--circle-size) * 2);
-        height: calc(var(--circle-size) * 2);
-        top   : calc(50% - var(--circle-size));
-        left  : calc(50% - var(--circle-size));
-
-        transform-origin: calc(50% - 800px) calc(50% + 200px);
-        animation       : moveInCircle 20s ease infinite;
-
-        opacity: 1;
-    }
 }
