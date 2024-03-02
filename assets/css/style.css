@@ -29,7 +29,7 @@
 .main-container {
     display        : flex;
     justify-content: center;
-    min-height     : 100vh;
+    min-height     : 100lvh;
 }
 
 .logo {
@@ -46,7 +46,7 @@
 }
 
 .contenido-anchito {
-    max-width: 700px
+    max-width: 87%
 }
 
 .cursiva {
@@ -70,7 +70,7 @@
 }
 
 .azul-color {
-    color      : var(--poem-color);
+    color: var(--poem-color);
 }
 
 .restante-main {
@@ -99,7 +99,7 @@
 }
 
 .fill-screen {
-    height: 100svh;
+    height: 100lvh;
 }
 
 .restante-separador {
@@ -115,7 +115,7 @@
     --color-bg2  : rgb(167, 201, 234);
     --color1     : 157, 187, 221;
     --color2     : 171, 205, 232;
-    --poem-color : #111565;
+    --poem-color : #ffffff;
     --circle-size: 200%;
     --blending   : hard-light;
 }
@@ -126,29 +126,29 @@ svg {
 
 @keyframes moveLeftRightUpperBlob {
     0% {
-        transform: translateX(-20vw) translateY(-20vh);
+        transform: translateX(-20lvw) translateY(-20lvh);
     }
 
     50% {
-        transform: translateX(80vw) translateY(-20vh);
+        transform: translateX(80lvw) translateY(-20lvh);
     }
 
     100% {
-        transform: translateX(-20vw) translateY(-20vh);
+        transform: translateX(-20lvw) translateY(-20lvh);
     }
 }
 
 @keyframes moveLeftRightLowerBlob {
     0% {
-        transform: translateX(80vw) translateY(50vh);
+        transform: translateX(80lvw) translateY(50lvh);
     }
 
     50% {
-        transform: translateX(-20vw) translateY(50vh);
+        transform: translateX(-20lvw) translateY(50lvh);
     }
 
     100% {
-        transform: translateX(80vw) translateY(50vh);
+        transform: translateX(80lvw) translateY(50lvh);
     }
 }
 
@@ -156,29 +156,39 @@ svg {
     .texto-numero-restante {
         font-size: 2em;
     }
+
+    .main-limitwidth {
+        max-width: 90%;
+    }
 }
 
 @media (min-width: 576px) {
     .texto-numero-restante {
         font-size: 3em;
     }
+
 }
 
 @media (min-width: 768px) {
     .texto-numero-restante {
         font-size: 4em;
     }
+
 }
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .main-limitwidth {
+        max-width: 800px;
+    }
+}
 
 @media (min-width: 1200px) {}
 
 @media (min-width: 1400px) {}
 
 .gradient-bg {
-    width     : 100vw;
-    height    : 100vh;
+    width     : 100lvw;
+    height    : 100lvh;
     position  : fixed;
     display   : block;
     overflow  : hidden;
@@ -217,4 +227,37 @@ svg {
         transform-origin: bottom right;
     }
 
+}
+
+/* decorations */
+
+.decorations-bg {
+    width   : 100%;
+    height  : 100%;
+    position: fixed;
+    top     : 0;
+    left    : 0;
+}
+
+.left,
+.right {
+    position         : absolute;
+    top              : 0;
+    height           : 100%;
+    width            : 100%;
+    background-repeat: repeat-y !important;
+    background-size  : 50% !important;
+}
+
+.left {
+    background: url("/assets/img/left.png") left top;
+}
+
+.right {
+    background: url("/assets/img/right.png") right top;
+}
+
+body {
+    margin : 0;
+    padding: 0;
 }
